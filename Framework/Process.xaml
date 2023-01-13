@@ -130,12 +130,21 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="431,219" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="[in_Config(&quot;OrchestratorNomeFila&quot;).ToString]">
+    <ui:AddQueueItem ServiceBaseAddress="{x:Null}" DisplayName="Add Queue Item" FolderPath="Demos" sap:VirtualizedContainerService.HintSize="431,219" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="[in_Config(&quot;OrchestratorNomeFila&quot;).ToString]">
       <ui:AddQueueItem.ItemInformation>
         <InArgument x:TypeArguments="x:String" x:Key="InvoiceNumber">[str_InvoiceNumber]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="InvoiceItem">[str_InvoiceItem]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="InvoiceTotal">[str_InvoiceTotal]</InArgument>
       </ui:AddQueueItem.ItemInformation>
+      <ui:AddQueueItem.ItemInformationCollection>
+        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" />
+      </ui:AddQueueItem.ItemInformationCollection>
+      <ui:AddQueueItem.Reference>
+        <InArgument x:TypeArguments="x:String" />
+      </ui:AddQueueItem.Reference>
+      <ui:AddQueueItem.TimeoutMS>
+        <InArgument x:TypeArguments="x:Int32" />
+      </ui:AddQueueItem.TimeoutMS>
     </ui:AddQueueItem>
   </Sequence>
 </Activity>
